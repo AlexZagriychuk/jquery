@@ -11,17 +11,80 @@ body {
 }
 
 .dialog-link {
+  background-color: #f7b64c;
+  border: 2px solid #e78f08;
+  border-radius: 3px;
   color: black;
   padding: 10px;
-  background-color: #f7b64c;
-  border-radius: 3px;
-  border: 2px solid #e78f08;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color .2s, box-shadow .2s;
 }
 
 .dialog-link:hover,
 .dialog-link:focus {
   background-color: #fbcb09;
   box-shadow: 2px 2px 5px 0 #fbcb09;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-dialog[aria-describedby='dialog-question'] {
+  background-color: #eee;
+  border-radius: 7px;
+}
+
+.ui-dialog[aria-describedby='dialog-question'] .ui-dialog-titlebar {
+  background-image: linear-gradient(to bottom, #f7b74d, #f6ad36);
+  border: 2px solid #e78f08;
+  border-radius: 10px;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.ui-dialog[aria-describedby='dialog-question'] .ui-dialog-titlebar-close {
+  background-color: transparent;
+  border: none;
+  margin-right: 5px;
+}
+
+.ui-dialog[aria-describedby='dialog-question'] .ui-icon-closethick {
+  background-image: url(http://download.jqueryui.com/themeroller/images/ui-icons_ffffff_256x240.png);
+}
+
+#dialog-question {
+  padding: 20px 20px;
+}
+
+.ui-dialog[aria-describedby='dialog-question'] .ui-dialog-buttonpane {
+  background-color: #eee;
+}
+
+.dialog-button-yes {
+  background-color: #fdf9e1;
+  border: 1px solid #fbcb09;
+  border-radius: 5px;
+  color: #c77405;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.dialog-button-yes:hover,
+.dialog-button-yes:focus {
+  background-color: #fae360;
+  box-shadow: 1px 1px 5px 0 #fae360;
+  color: #c77405;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.dialog-button-no {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #1c94cc;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.dialog-button-no:hover,
+.dialog-button-no:focus {
+  background-color: #ccf7f4;
+  box-shadow: 1px 1px 5px 0 #ccf7f4;
+  color: #1c94cc;
+  transition: background-color .2s, box-shadow .2s;
 }
