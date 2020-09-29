@@ -7,11 +7,20 @@
   <title>"TASK 2.1 Create a Dialog Box using jQuery UI</title>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="scripts/jquery-dialog.js"></script>
 </head>
 
 <body>
+  <div class="wrapper">
+    <a id="dialog-link" class="dialog-link" href="#">Open the Dialog Box</a>
+  </div>
 
+  <div id="dialog-question" title="Redirect to associated payment?">
+    <p>This load was paid on delivery. If load is updated successfully would you like to be redirected to the payment creation screen?</p>
+  </div>
 </body>
 
 </html>

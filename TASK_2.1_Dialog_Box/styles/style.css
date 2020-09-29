@@ -1,6 +1,27 @@
 body {
-  font-family: sans-serif;
+  font-family: cursive;
   font-size: 20px;
-  padding: 5px;
+  padding: 20px;
 }
 
+.wrapper {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.dialog-link {
+  color: black;
+  padding: 10px;
+  background-color: #f7b64c;
+  border-radius: 3px;
+  border: 2px solid #e78f08;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.dialog-link:hover,
+.dialog-link:focus {
+  background-color: #fbcb09;
+  box-shadow: 2px 2px 5px 0 #fbcb09;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
