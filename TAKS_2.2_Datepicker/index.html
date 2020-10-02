@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bike Shop</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="fonts/font_awesome_selection/css/font_awesome_selection.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <strong class="header__logo">
+      <a href="#">
+        <img src="images/logo.png" alt="The Bike Shop">
+      </a>
+    </strong>
+    <div class="header__nav-wrapper">
+      <a class="header__nav-burger" id="nav-burger-btn" onclick="toggleBurgerMenuBtn()">
+        <span></span>
+      </a>
+      <nav class="header__nav">
+        <ul>
+          <li><a class="nav__current-page" href="#">Home</a></li>
+          <li><a href="html/about-us.html">About us</a></li>
+          <li><a href="html/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-and-footer-wrapper">
+    <main class="main">
+      <div class="main__row">
+        <aside class="main__search-form">
+          <h1 class="search-form__title">Search Form</h1>
+        </aside>
+
+        <div class="main__content">
+          <div class="main__cards">
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-1.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 1</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$500</span>
+                <span class="card__old-price">$600</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-2.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 2</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$1000</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-3.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 3 and Lorem ipsum dolor sit amet consectetur.</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$1500</span>
+                <span class="card__old-price">$2600</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-4.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 4</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$999</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-5.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 5 and Lorem, ipsum dolor.</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$700</span>
+                <span class="card__old-price">$999</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-6.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 6</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$3099</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-7.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 7</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$399</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-8.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 8</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$799</span>
+                <span class="card__old-price">$1200</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+
+            <div class="cards__card">
+              <div class="card__img">
+                <img src="images/bikes/bike-9.jpg" alt="Image description">
+              </div>
+              <div class="card__brand-and-model">
+                <div class="card__item-brand">
+                  <span class="card-item__prop-name">Brand:</span>
+                  <span class="card-item__prop-value">Trek</span>
+                </div>
+                <div class="card__item-model">
+                  <span class="card-item__prop-name">Model:</span>
+                  <span class="card-item__prop-value">Bike 9</span>
+                </div>
+              </div>
+              <div class="card__pricing">
+                <span class="card__price">$2500</span>
+              </div>
+              <a class="card__add-to-cart" href="#">Add to Cart</a>
+            </div>
+          </div> <!-- main__cards -->
+        </div> <!-- main__content -->
+      </div> <!-- main__row -->
+    </main>
+
+    <footer class="footer">
+      <div class="footer__icons footer__social">
+        <ul>
+          <li><a class="icon-facebook-official" href="https://www.facebook.com/" target="_blank"></a></li>
+          <li><a class="icon-instagram" href="https://www.instagram.com/?hl=en" target="_blank"></a></li>
+          <li><a class="icon-twitter" href="https://twitter.com/tweeter?lang=en" target="_blank"></a></li>
+          <li><a class="icon-youtube-play" href="https://www.youtube.com/" target="_blank"></a></li>
+          <li><a class="icon-pinterest-circled" href="https://www.pinterest.com/" target="_blank"></a></li>
+          <li><a class="icon-reddit" href="https://www.reddit.com/" target="_blank"></a></li>
+          <li><a class="icon-linkedin-squared" href="https://www.linkedin.com/" target="_blank"></a></li>
+          <li><a class="icon-github-circled" href="https://github.com/" target="_blank"></a></li>
+        </ul>
+      </div>
+      <div class="footer__icons footer__contacts">
+        <ul>
+          <li><a class="icon-phone" href="tel:11234567890"><span>+1 123-456-7890</span></a></li>
+          <li><a class="icon-mail-alt" href="mailto:abc@example.com"><span>abc@example.com</span></a></li>
+          <li><a class="icon-location" href="html/about-us.html#our-address"><address>701 W Georgia St, Vancouver, BC V7Y1G5</address></a></li>
+        </ul>
+      </div>
+      <span class="footer__copyright">&copy; The Bike Shop 2020</span>
+    </footer>
+  </div> <!-- main-and-footer-wrapper -->
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
