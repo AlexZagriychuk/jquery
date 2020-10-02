@@ -7,8 +7,11 @@
   <title>The Bike Shop</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="fonts/font_awesome_selection/css/font_awesome_selection.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="styles/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="scripts/jquery-datepicker.js"></script>
 </head>
 
 <body>
@@ -37,6 +40,10 @@
       <div class="main__row">
         <aside class="main__search-form">
           <h1 class="search-form__title">Search Form</h1>
+          <div class="search-form__datepicker">
+            <span>Date: </span>
+            <input class="input" type="text" id="datepicker">
+          </div>
         </aside>
 
         <div class="main__content">

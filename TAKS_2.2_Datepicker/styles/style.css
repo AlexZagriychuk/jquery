@@ -15,6 +15,18 @@ body {
   position: relative; 
 }
 
+.input,
+.textarea {
+  border: 1px solid #009be0;
+  border-radius: 5px;
+}
+
+.input:focus,
+.textarea:focus {
+  border: 1px solid #005dd9;
+  box-shadow: 0 0 10px 0 #005dd9;
+}
+
 /*---------------------------------
   header
 ----------------------------------- */
@@ -146,6 +158,25 @@ body {
   font-size: 20px;
 }
 
+.search-form__datepicker {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.search-form__datepicker input {
+  padding: 10px;
+  width: calc(100% - 32px); /* ... .ui-datepicker-trigger min-width + margin-left + few pixels */
+}
+
+.search-form__datepicker .ui-datepicker-trigger {
+  height: 25px;
+  margin-left: 5px;
+  min-width: 25px;
+}
+
 .main__content {
   background-color: #fffffe;
   width: 75%;
@@ -275,17 +306,9 @@ body {
 
 .main__contact-us-form input,
 .main__contact-us-form textarea {
-  border: 1px solid #009be0;
-  border-radius: 5px;
   font-size: 18px;
   margin-bottom: 25px;
   padding: 5px;
-}
-
-.main__contact-us-form input:focus,
-.main__contact-us-form textarea:focus {
-  border: 1px solid #005dd9;
-  box-shadow: 0 0 10px 0 #005dd9;
 }
 
 .main__contact-us-form textarea {
