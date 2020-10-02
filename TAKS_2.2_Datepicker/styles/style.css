@@ -143,7 +143,7 @@ body {
 .main__search-form {
   border-right: 4px solid rgba(0, 155, 224, .4); /* rgb(0,155,224) = #009be0*/
   width: 25%;
-  min-width: 200px;
+  min-width: 300px;
   padding: 15px;
   transition: border .2s, box-shadow .2s;
 }
