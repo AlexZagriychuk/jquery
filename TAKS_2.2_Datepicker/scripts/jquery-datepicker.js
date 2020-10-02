@@ -1,5 +1,8 @@
 $(function () {
   $("#datepicker").datepicker({
+    changeMonth: true,
+    changeYear: true,
+    numberOfMonths: 3,
     showAnim: "slideDown",
     showButtonPanel: true,
     showOn: "both",

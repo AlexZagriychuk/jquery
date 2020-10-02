@@ -167,6 +167,7 @@ body {
 }
 
 .search-form__datepicker input {
+  margin-left: 5px;
   padding: 10px;
   width: calc(100% - 32px); /* ... .ui-datepicker-trigger min-width + margin-left + few pixels */
 }
