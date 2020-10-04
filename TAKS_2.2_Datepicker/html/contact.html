@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bike Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../fonts/font_awesome_selection/css/font_awesome_selection.css">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <strong class="header__logo">
+      <a href="../index.html">
+        <img src="../images/logo.png" alt="The Bike Shop">
+      </a>
+    </strong>
+    <div class="header__nav-wrapper">
+      <a class="header__nav-burger" id="nav-burger-btn" onclick="toggleBurgerMenuBtn()">
+        <span></span>
+      </a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about-us.html">About us</a></li>
+          <li><a class="nav__current-page" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-and-footer-wrapper">
+    <main class="main">
+      <div class="main__contact-us">
+        <h1>Contact</h1>
+
+        <form class="main__contact-us-form" action="#">
+          <p>If you have any questions, please feel free to contact us:</p>
+          <label for="contact-us__name">Your name:</label>
+          <input class="input" id="contact-us__name" type="text">
+          <label for="contact-us__email">Your email:</label>
+          <input class="input" id="contact-us__email" type="email">
+          <label for="contact-us__subject">Subject:</label>
+          <textarea class="textarea" name="subject" id="contact-us__subject"></textarea>
+          <div class="contact-us__submit-btn">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__icons footer__social">
+        <ul>
+          <li><a class="icon-facebook-official" href="https://www.facebook.com/" target="_blank"></a></li>
+          <li><a class="icon-instagram" href="https://www.instagram.com/?hl=en" target="_blank"></a></li>
+          <li><a class="icon-twitter" href="https://twitter.com/tweeter?lang=en" target="_blank"></a></li>
+          <li><a class="icon-youtube-play" href="https://www.youtube.com/" target="_blank"></a></li>
+          <li><a class="icon-pinterest-circled" href="https://www.pinterest.com/" target="_blank"></a></li>
+          <li><a class="icon-reddit" href="https://www.reddit.com/" target="_blank"></a></li>
+          <li><a class="icon-linkedin-squared" href="https://www.linkedin.com/" target="_blank"></a></li>
+          <li><a class="icon-github-circled" href="https://github.com/" target="_blank"></a></li>
+        </ul>
+      </div>
+      <div class="footer__icons footer__contacts">
+        <ul>
+          <li><a class="icon-phone" href="tel:11234567890"><span>+1 123-456-7890</span></a></li>
+          <li><a class="icon-mail-alt" href="mailto:abc@example.com"><span>abc@example.com</span></a></li>
+          <li><a class="icon-location" href="about-us.html#our-address"><address>701 W Georgia St, Vancouver, BC V7Y1G5</address></a></li>
+        </ul>
+      </div>
+      <span class="footer__copyright">&copy; The Bike Shop 2020</span>
+    </footer>
+  </div>
+
+  <script src="../scripts/main.js"></script>
+</body>
+
+</html>
