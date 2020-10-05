@@ -6,29 +6,32 @@ $(function () {
     showAnim: "slideDown",
     showButtonPanel: true,
     showOn: "both",
-    onSelect: function (selectedDate) {
-      if (!$(this).data().datepicker.first) {
-        $(this).data().datepicker.inline = true;
-        $(this).data().datepicker.first = selectedDate;
-      } else {
-        if (selectedDate > $(this).data().datepicker.first) {
-          $(this).val($(this).data().datepicker.first + " - " + selectedDate);
-        } else {
-          $(this).val(selectedDate + " - " + $(this).data().datepicker.first);
-        }
-        $(this).data().datepicker.inline = false;
-      }
-    },
-    onClose: function () {
-      delete $(this).data().datepicker.first;
-      $(this).data().datepicker.inline = false;
-    },
+    onSelect: singleFieldRangeDatepickerOnSelect,
+    onClose: singleFieldRangeDatepickerOnClose,
     buttonImage: "images/icons/calendar.gif",
     buttonImageOnly: true,
     buttonText: "Select date"
   })
 });
 
+function singleFieldRangeDatepickerOnSelect(selectedDate) {
+  if (!$(this).data().datepicker.first) {
+    $(this).data().datepicker.inline = true;
+    $(this).data().datepicker.first = selectedDate;
+  } else {
+    if (selectedDate > $(this).data().datepicker.first) {
+      $(this).val($(this).data().datepicker.first + " - " + selectedDate);
+    } else {
+      $(this).val(selectedDate + " - " + $(this).data().datepicker.first);
+    }
+    $(this).data().datepicker.inline = false;
+  }
+}
+
+function singleFieldRangeDatepickerOnClose() {
+  delete $(this).data().datepicker.first;
+  $(this).data().datepicker.inline = false;
+}
 
 $.datepicker._gotoToday = function (id) {
   var target = $(id);
