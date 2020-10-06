@@ -178,6 +178,30 @@ body {
   min-width: 25px;
 }
 
+.ui-datepicker .ui-datepicker-buttonpane button {
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button:focus,
+.ui-datepicker .ui-datepicker-buttonpane button:hover {
+  background-color: #005dd9;
+  box-shadow: 1px 1px 10px 0  #005dd9;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-calendar a {
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-calendar a.ui-state-hover {
+  background-color: #009be0;
+  box-shadow: 0 0 5px 0  #009be0;
+  transition: background-color .2s, box-shadow .2s;
+}
+
 .main__content {
   background-color: #fffffe;
   width: 75%;
