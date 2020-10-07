@@ -178,6 +178,10 @@ body {
   min-width: 25px;
 }
 
+div.ui-datepicker {
+  max-width: calc(100% - 100px);
+}
+
 .ui-datepicker .ui-datepicker-buttonpane button {
   background-color: #fff;
   color: #000;
@@ -475,6 +479,11 @@ body {
     margin-right: 30px;
   }
 
+  div.ui-datepicker div.ui-datepicker-group {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
   /* only 2 cards in the row (2 cards__card) */
   .cards__card {
     width: calc((100% - 25px) / 2); /* ((100% - this.margin-left - few px for IE11 glitches / 2 {2 is number of cards in the row} */
@@ -608,6 +617,16 @@ body {
     top: 0;
     height: 100%;
     width: 3px;
+  }
+
+  div.ui-datepicker {
+    max-width: calc(100% - 90px);
+    min-width: 260px;
+  }
+
+  div.ui-datepicker div.ui-datepicker-group {
+    min-width: 250px;
+    width: 100%;
   }
 
   .main__row {
