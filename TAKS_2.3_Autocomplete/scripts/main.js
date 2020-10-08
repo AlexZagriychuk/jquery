@@ -99,9 +99,20 @@ $(function () {
   function getBrands() {
     var brandSpans = $(".card__item-brand .card-item__prop-value");
     var brandNamesSet = new Set();
-    for (var span of brandSpans) {
-      brandNamesSet.add(span.innerText);
+    for (var i = 0; i < brandSpans.length; i++) {
+      brandNamesSet.add(brandSpans[i].innerText);
     }
-    return Array.from(brandNamesSet);
+    return setToArray(brandNamesSet);
+  }
+
+  function setToArray(set) {
+    // return Array.from(set); //ES6 does not work in IE11
+
+    var arr = new Array(set.size);
+    var i = 0;
+    set.forEach(function(value) {
+      arr[i++] = value;
+    });
+    return arr;
   }
 });
