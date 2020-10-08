@@ -154,11 +154,7 @@ body {
   transition: border .2s, box-shadow .2s;
 }
 
-.search-form__title {
-  font-size: 20px;
-}
-
-.search-form__datepicker {
+.main__search-form > * {
   align-items: center;
   display: flex;
   font-size: 16px;
@@ -166,9 +162,20 @@ body {
   width: 100%;
 }
 
-.search-form__datepicker input {
+.search-form-input {
   margin-left: 5px;
   padding: 10px;
+}
+
+.search-form__title {
+  font-size: 20px;
+}
+
+.search-form__brand input {
+  width: 100%;
+}
+
+.search-form__datepicker input {
   width: calc(100% - 32px); /* ... .ui-datepicker-trigger min-width + margin-left + few pixels */
 }
 

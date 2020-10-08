@@ -1,6 +1,6 @@
 function toggleBurgerMenuBtn() {
   let burger = document.getElementById('nav-burger-btn'),
-      activeClass = 'nav-burger__active';
+    activeClass = 'nav-burger__active';
 
   burger && burger.addEventListener('click', function (e) {
     e.preventDefault();
@@ -29,7 +29,7 @@ $(function () {
   }).click(singleFieldRangeDatepickerOnClick);
 
   $('#ui-datepicker-div').on('click', '.ui-datepicker-close', function () {
-    $('#datepicker').datepicker( "hide" );
+    $('#datepicker').datepicker("hide");
   });
 
   function singleFieldRangeDatepickerOnSelect(selectedDate) {
@@ -61,7 +61,7 @@ $(function () {
   }
 
   function singleFieldRangeDatepickerOnClick() {
-    if(!datepickerCloseBtnCopied) {
+    if (!datepickerCloseBtnCopied) {
       setTimeout(function () {
         datepickerCloseBtn = $('#ui-datepicker-div').find('.ui-datepicker-close').clone();
       }, 500);
@@ -90,3 +90,18 @@ $.datepicker._gotoToday = function (id) {
   this._notifyChange(inst);
   this._adjustDate(target);
 }
+
+$(function () {
+  $("#brand").autocomplete({
+    source: getBrands()
+  });
+
+  function getBrands() {
+    var brandSpans = $(".card__item-brand .card-item__prop-value");
+    var brandNamesSet = new Set();
+    for (var span of brandSpans) {
+      brandNamesSet.add(span.innerText);
+    }
+    return Array.from(brandNamesSet);
+  }
+});
