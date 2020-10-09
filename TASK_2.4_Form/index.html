@@ -19,11 +19,11 @@
       <div class="reservation-fields">
         <div class="reservation__departure-date reservation-field">
           <span class="reservation-field-name">Pick a departure date</span>
-          <input class="reservation-field-value" id="departure-date" type="text">
+          <input class="reservation-field-value" id="departure-date" type="text" autocomplete="off" ​>
         </div>
         <div class="reservation__find-airport reservation-field">
           <span class="reservation-field-name">Find an airport</span>
-          <input class="reservation__find-airport-input reservation-field-value" id="reservation__find-airport-input" type="text">     
+          <input class="reservation__find-airport-input reservation-field-value" id="reservation__find-airport-input" type="text">
         </div>
         <div class="reservation__meal-options reservation-field">
           <span class="reservation-field-name">Meal Options</span>
@@ -48,18 +48,18 @@
           <span class="reservation-field-name">Type of seat you`d like</span>
           <fieldset class="reservation__seat-type-buttons reservation-field-value">
             <label for="seat-type-1">Aisle</label>
-            <input type="radio" name="seat-type" id="seat-type-1">
+            <input type="checkbox" name="seat-type" id="seat-type-1">
             <label for="seat-type-2">Window</label>
-            <input type="radio" name="seat-type" id="seat-type-2">
+            <input type="checkbox" name="seat-type" id="seat-type-2">
             <label for="seat-type-3">Exit Row</label>
-            <input type="radio" name="seat-type" id="seat-type-3">
+            <input type="checkbox" name="seat-type" id="seat-type-3">
             <label for="seat-type-4">Any seat</label>
-            <input type="radio" name="seat-type" id="seat-type-4">
+            <input type="checkbox" name="seat-type" id="seat-type-4">
           </fieldset>
         </div>
         <div class="reservation__continue reservation-field">
           <span class="reservation-field-name"></span>
-          <button class="reservation-field-value" type="submit">Continue reservation process</button>
+          <button class="reservation-field-value" type="submit" id="continue-reservation">Continue reservation process</button>
         </div>
       </div>
     </form>

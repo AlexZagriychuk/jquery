@@ -55,3 +55,20 @@ $(function () {
     source: airports
   });
 });
+
+$(function () {
+  $("#meal-options").selectmenu();
+});
+
+$(function () {
+  $("fieldset input").checkboxradio({
+    icon: false
+  });
+});
+
+$(function () {
+  $("#continue-reservation").button({
+    icon: "ui-icon-circle-arrow-e",
+    iconPosition: "end"
+  });
+});
