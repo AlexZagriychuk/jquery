@@ -10,12 +10,12 @@ body {
 }
 
 .reservation {
-  background-color: #FEFBF6;
+  background-color: #fefbf6;
   padding: 20px;
 }
 
 .reservation__title {
-  color: #66635E;
+  color: #66635e;
   font-size: 32px;
   font-weight: 700;
   padding-bottom: 20px;
@@ -24,7 +24,7 @@ body {
 
 .reservation__title:after {
   bottom: 10px;
-  border-bottom: 2px solid #A29E9B;
+  border-bottom: 2px solid #a29e9b;
   content: "";
   left: 0;
   position: absolute;
@@ -32,7 +32,7 @@ body {
 }
 
 .reservation-fields {
-  color: #7D7A73;
+  color: #7d7a73;
 }
 
 .reservation-field {
@@ -47,7 +47,40 @@ body {
 }
 
 .reservation-field-value {
+  background-color: #fafafa;
+  border: 1px solid #d1d0ce;
+  border-radius: 5px;
+  color: #2c90cb;
   font-size: 22px;
+  font-weight: 700;
   margin-left: 20px;
-  padding: 10px;
+  padding: 10px 20px;
+}
+
+input.reservation-field-value {
+  background-color: #fff;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button:focus,
+.ui-datepicker .ui-datepicker-buttonpane button:hover {
+  background-color: #2c90cb;
+  box-shadow: 1px 1px 10px 0 #2c90cb;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-calendar a {
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.ui-datepicker .ui-datepicker-calendar a.ui-state-hover {
+  background-color: #2c90cb;
+  box-shadow: 0 0 5px 0 #2c90cb;
+  transition: background-color .2s, box-shadow .2s;
 }
