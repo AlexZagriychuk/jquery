@@ -17,15 +17,15 @@
     <form class="reservation" action="#">
       <h2 class="reservation__title">One-Way Airlines: Let`s make a reservation</h2>
       <div class="reservation-fields">
-        <div class="reservation__departure-date">
+        <div class="reservation__departure-date reservation-field">
           <span class="reservation-field-name">Pick a departure date</span>
           <input class="reservation-field-value" type="text">
         </div>
-        <div class="reservation__find-airport">
+        <div class="reservation__find-airport reservation-field">
           <span class="reservation-field-name">Find an airport</span>
           <input class="reservation__find-airport-input reservation-field-value" type="text">     
         </div>
-        <div class="reservation__meal-options">
+        <div class="reservation__meal-options reservation-field">
           <span class="reservation-field-name">Meal Options</span>
           <select class="reservation-field-value" name="meal-options" id="meal-options">
             <option selected="selected">No Meal</option>
@@ -33,7 +33,7 @@
             <option>Breakfast and Dinner</option>
           </select>
         </div>
-        <div class="reservation__bags">
+        <div class="reservation__bags reservation-field">
           <span class="reservation-field-name">Number of bags to check</span>
           <fieldset class="reservation__bags-buttons reservation-field-value">
             <label for="bags0">0</label>
@@ -44,7 +44,7 @@
             <input type="radio" name="bags" id="bags2">
           </fieldset>
         </div>
-        <div class="reservation__seat-type">
+        <div class="reservation__seat-type reservation-field">
           <span class="reservation-field-name">Type of seat you`d like</span>
           <fieldset class="reservation__seat-type-buttons reservation-field-value">
             <label for="seat-type-1">Aisle</label>
@@ -57,7 +57,7 @@
             <input type="radio" name="seat-type" id="seat-type-4">
           </fieldset>
         </div>
-        <div class="reservation__continue">
+        <div class="reservation__continue reservation-field">
           <span class="reservation-field-name"></span>
           <button class="reservation-field-value" type="submit">Continue reservation process</button>
         </div>

@@ -1,5 +1,53 @@
 body {
-  font-size: 20px;
-  line-height: 2rem;
+  font-family: sans-serif;
+  font-size: 18px;
   overflow-x: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.reservation {
+  background-color: #FEFBF6;
+  padding: 20px;
+}
+
+.reservation__title {
+  color: #66635E;
+  font-size: 32px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.reservation__title:after {
+  bottom: 10px;
+  border-bottom: 2px solid #A29E9B;
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.reservation-fields {
+  color: #7D7A73;
+}
+
+.reservation-field {
+  align-items: center;
+  display: flex;
+  margin: 10px 0;
+}
+
+.reservation-field-name {
+  text-align: right;
+  width: 25%;
+}
+
+.reservation-field-value {
+  font-size: 22px;
+  margin-left: 20px;
+  padding: 10px;
 }
