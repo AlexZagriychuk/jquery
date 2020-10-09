@@ -13,7 +13,58 @@
 </head>
 
 <body>
-  
+  <div class="wrapper">
+    <form class="reservation" action="#">
+      <h2 class="reservation__title">One-Way Airlines: Let`s make a reservation</h2>
+      <div class="reservation-fields">
+        <div class="reservation__departure-date">
+          <span class="reservation-field-name">Pick a departure date</span>
+          <input class="reservation-field-value" type="text">
+        </div>
+        <div class="reservation__find-airport">
+          <span class="reservation-field-name">Find an airport</span>
+          <input class="reservation__find-airport-input reservation-field-value" type="text">     
+        </div>
+        <div class="reservation__meal-options">
+          <span class="reservation-field-name">Meal Options</span>
+          <select class="reservation-field-value" name="meal-options" id="meal-options">
+            <option selected="selected">No Meal</option>
+            <option>Breakfast</option>
+            <option>Breakfast and Dinner</option>
+          </select>
+        </div>
+        <div class="reservation__bags">
+          <span class="reservation-field-name">Number of bags to check</span>
+          <fieldset class="reservation__bags-buttons reservation-field-value">
+            <label for="bags0">0</label>
+            <input type="radio" name="bags" id="bags0">
+            <label for="bags1">1</label>
+            <input type="radio" name="bags" id="bags1">
+            <label for="bags2">2</label>
+            <input type="radio" name="bags" id="bags2">
+          </fieldset>
+        </div>
+        <div class="reservation__seat-type">
+          <span class="reservation-field-name">Type of seat you`d like</span>
+          <fieldset class="reservation__seat-type-buttons reservation-field-value">
+            <label for="seat-type-1">Aisle</label>
+            <input type="radio" name="seat-type" id="seat-type-1">
+            <label for="seat-type-2">Window</label>
+            <input type="radio" name="seat-type" id="seat-type-2">
+            <label for="seat-type-3">Exit Row</label>
+            <input type="radio" name="seat-type" id="seat-type-3">
+            <label for="seat-type-4">Any seat</label>
+            <input type="radio" name="seat-type" id="seat-type-4">
+          </fieldset>
+        </div>
+        <div class="reservation__continue">
+          <span class="reservation-field-name"></span>
+          <button class="reservation-field-value" type="submit">Continue reservation process</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
   <script src="scripts/main.js"></script>
 </body>
 
