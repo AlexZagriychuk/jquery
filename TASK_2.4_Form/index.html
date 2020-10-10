@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery UI Form Widget</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form class="reservation" action="#">
+      <h2 class="reservation__title">One-Way Airlines: Let`s make a reservation</h2>
+      <div class="reservation-fields">
+        <div class="reservation__departure-date reservation-field">
+          <span class="reservation-field-name">Pick a departure date</span>
+          <input class="reservation-field-value" id="departure-date" type="text" autocomplete="off" ​>
+        </div>
+        <div class="reservation__find-airport reservation-field">
+          <span class="reservation-field-name">Find an airport</span>
+          <input class="reservation__find-airport-input reservation-field-value" id="reservation__find-airport-input" type="text">
+        </div>
+        <div class="reservation__meal-options reservation-field">
+          <span class="reservation-field-name">Meal Options</span>
+          <select class="reservation-field-value" name="meal-options" id="meal-options">
+            <option selected="selected">No Meal</option>
+            <option>Breakfast</option>
+            <option>Breakfast and Dinner</option>
+          </select>
+        </div>
+        <div class="reservation__bags reservation-field">
+          <span class="reservation-field-name">Number of bags to check</span>
+          <fieldset class="reservation__bags-buttons reservation-field-value">
+            <label for="bags0">0</label>
+            <input type="radio" name="bags" id="bags0">
+            <label for="bags1">1</label>
+            <input type="radio" name="bags" id="bags1">
+            <label for="bags2">2</label>
+            <input type="radio" name="bags" id="bags2">
+          </fieldset>
+        </div>
+        <div class="reservation__seat-type reservation-field">
+          <span class="reservation-field-name">Type of seat you`d like</span>
+          <fieldset class="reservation__seat-type-buttons reservation-field-value">
+            <label for="seat-type-1">Aisle</label>
+            <input type="checkbox" name="seat-type" id="seat-type-1">
+            <label for="seat-type-2">Window</label>
+            <input type="checkbox" name="seat-type" id="seat-type-2">
+            <label for="seat-type-3">Exit Row</label>
+            <input type="checkbox" name="seat-type" id="seat-type-3">
+            <label for="seat-type-4">Any seat</label>
+            <input type="checkbox" name="seat-type" id="seat-type-4">
+          </fieldset>
+        </div>
+        <div class="reservation__continue reservation-field">
+          <span class="reservation-field-name"></span>
+          <button class="reservation-field-value" type="submit" id="continue-reservation">Continue reservation process</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
