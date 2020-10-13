@@ -1,0 +1,57 @@
+@keyframes animateCustomPuff {
+  0% {
+    background-position: 0 -1%;
+  }
+  100% {
+    background-position: 0 130%;
+  }
+}
+
+body {
+  background-color: #97c3e9;
+}
+
+#container {
+  margin: 0 auto;
+  width: 440px;
+}
+
+#photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#photo-grid li {
+  cursor: move;
+  margin: 0 5px 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.custom-puff {
+  animation: animateCustomPuff .4s steps(5, end) forwards;
+  background: url("../img/epuff.png") no-repeat 0 0 / cover;
+}
+
+.trash {
+  align-items: center;
+  border: 1px solid white;
+  color: #2f5367;
+  display: flex;
+  margin: 10px 0;
+  padding: 40px 10px;
+  width: 100%;
+}
+
+#trash-title {
+  margin-left: 10px;
+}
+
+.highlight {
+  border: 1px dashed #b5c051;
+  -moz-border-radius: 10px;
+}
+
+.highlight-accept {
+  background: #d9dfa4;
+}
