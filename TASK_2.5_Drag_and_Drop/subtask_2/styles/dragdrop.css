@@ -1,13 +1,35 @@
+body {
+  background-color: #97C3E9;
+}
+
+#container {
+  margin: 0 auto;
+  width: 440px;
+}
+
+#photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #photo-grid img {
   cursor: move;
+  margin: 0 5px 10px;
   width: 100px;
 }
 
 .trash {
-  padding: 10px 10px;
+  align-items: center;
   border: 1px solid white;
-  margin-bottom: 10px;
-  width: 50%;
+  color: #2F5367;
+  display: flex;
+  margin: 10px 0;
+  padding: 40px 10px;
+  width: 100%;
+}
+
+#trash-title {
+  margin-left: 10px;
 }
 
 .highlight {
