@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flickr Feed</title>
+
+  <style>
+    .image {
+      float: left;
+      padding: 10px;
+      border: solid 1px rgb(27, 45, 94);
+      background-color: white;
+      margin: 0 30px 30px 0;
+    }
+
+    .image:hover {
+      border-color: red;
+      background-color: rgb(204, 204, 204);
+    }
+  </style>
+
+  <!-- Put jQuery here -->
+  <script src="jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      var flickrPhotosApiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      var flickrOptions = {
+        id: "25053835@N03",
+        format: "json"
+      }
+      function displayPhotos(data) {
+        var photosHTML = '';
+        $.each(data.items, function(i, photo) {
+          photosHTML += '<img src="' + photo.media.m + '" alt="' + photo.title + '">';
+        });
+        $('#photos').html(photosHTML);
+      }
+      $.getJSON(flickrPhotosApiUrl, flickrOptions, displayPhotos);
+    }); // end ready
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      Flickr Gallery
+    </header>
+    <div class="content">
+      <div class="main">
+        <h1>Flickr Images</h1>
+        <div id="photos"></div>
+        <br class="clearLeft">
+      </div>
+    </div>
+    <footer>
+
+    </footer>
+  </div>
+</body>
+
+</html>
