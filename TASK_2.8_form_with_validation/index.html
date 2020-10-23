@@ -9,17 +9,18 @@
   <link rel="stylesheet" href="styles/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <form class="form" action="#" id="feedback-form">
       <p>Feedback form</p>
-      <label for="name">Name:</label>
+      <label class="label" for="name">Name:</label>
       <input class="input" name="name" id="name" type="text">
-      <label for="email">Email:</label>
+      <label class="label" for="email">Email:</label>
       <input class="input" name="email" id="email" type="email">
-      <label for="description">Description:</label>
+      <label class="label" for="description">Description:</label>
       <textarea class="textarea" name="description" id="description"></textarea>
       <div class="submit-btn">
         <button type="submit" id="submit">Send</button>

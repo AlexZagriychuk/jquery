@@ -18,11 +18,16 @@ body {
 .form p {
   font-size: 28px;
   font-weight: 700;
-  margin: 40px 0 40px 0;
+  margin: 40px 0;
 }
 
-.form label {
-  margin-bottom: 10px;
+.label {
+  margin: 30px 0 10px;
+  font-weight: 700;
+}
+
+label.error {
+  color: #f00;
   font-weight: 700;
 }
 
@@ -41,7 +46,7 @@ body {
 
 .form input,
 .form textarea {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   padding: 5px;
 }
 
