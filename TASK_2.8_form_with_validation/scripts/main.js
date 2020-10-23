@@ -1,9 +1,14 @@
 $(function () {
-  initJQueryAjaxSendFormDataToBackend();
+  initJQueryAjaxPostFormDataToBackend();
 });
 
-function initJQueryAjaxSendFormDataToBackend() {
-  $.post("./scripts/test.php", { name: "Test Name", email: "abc@example.com", description: "some text"})
-    .done(function(data) { console.log(data); })
-    .fail(function(error) { console.error(error); });
+function initJQueryAjaxPostFormDataToBackend() {
+  $("#feedback-form").submit(function (event) {
+    // Stop form from submitting normally
+    event.preventDefault();
+
+    $.post("./scripts/test.php", $(this).serialize())
+      .done(function (data) { console.log(data); })
+      .fail(function (error) { console.error(error); });
+  });
 }
