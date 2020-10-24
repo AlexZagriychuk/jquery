@@ -4,13 +4,24 @@ $(function () {
 });
 
 function initJQueryFormValidation() {
+  $.validator.addMethod(
+    "regex",
+    function (value, element, regexp) {
+      var re = new RegExp(regexp);
+      return this.optional(element) || re.test(value);
+    },
+    "Please check your input."
+  );
+
   $("#feedback-form").validate({
     // validation rules
     rules: {
       name: "required",
       email: {
         required: true,
-        email: true
+        email: true,
+        // any 2 or more symbols before @; then @; then any 2 or more symbols before .; then .; then any 2 or more symbols
+        regex: "^[^@]{2,}@[^\\.]{2,}\\..{2,}$"
       },
       description: "required"
     },
