@@ -194,15 +194,68 @@ body {
   transition: box-shadow .2s;
 }
 
-.card__img {
+.cards__img-wrapper {
   margin-bottom: 20px;
+  position: relative;
+}
+
+.card__img,
+.card__img-list {
   min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.card__img-list li {
+  flex-shrink: 0;
   width: 100%;
 }
 
-.card__img img {
-  max-width: 100%;
+.card__img img,
+.card__img-list img {
+  width: 100%;
   height: auto;
+}
+
+.card__img-nav-arrows {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-nav-arrow {
+  fill: #009be0;
+  height: 30px;
+  width: 30px;
+  transition: all .2s;
+}
+
+.img-nav-arrow:focus,
+.img-nav-arrow:hover {
+  cursor: pointer;
+  fill: #005dd9;
+  filter: drop-shadow(0 0 5px #005dd9);
+  -webkit-filter: drop-shadow(0 0 5px #005dd9);
+  transition: all .2s;
+}
+
+.card__img-nav-buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+}
+
+.card__img-nav-buttons input + input {
+  margin-left: 5px;
 }
 
 .card__brand-and-model {
