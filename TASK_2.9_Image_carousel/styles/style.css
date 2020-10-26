@@ -1,0 +1,663 @@
+@font-face {
+  font-family: edo_sz;
+  src:  url(../fonts/edosz/edosz.ttf) format('truetype'),
+        url(../fonts/edosz/edosz.woff2) format('woff2'),
+        url(../fonts/edosz/edosz.woff) format('woff');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: cursive;
+  font-size: 20px;
+  line-height: 2rem;
+  overflow-x: hidden; 
+  position: relative; 
+}
+
+.input,
+.textarea {
+  border: 1px solid #009be0;
+  border-radius: 5px;
+}
+
+.input:focus,
+.textarea:focus {
+  border: 1px solid #005dd9;
+  box-shadow: 0 0 10px 0 #005dd9;
+}
+
+/*---------------------------------
+  header
+----------------------------------- */
+.header {
+  align-items: center;
+  background-color: #cdccce;
+  box-shadow: 0 5px 10px 0 #009be0;
+  display: flex;
+  padding: 5px;
+  transition: box-shadow .2s;
+  z-index: 1;
+}
+
+.header:hover {
+  box-shadow: 0 5px 10px 0 #005dd9;
+  transition: box-shadow .2s;
+}
+
+.header__logo {
+  height: 100px;
+  margin-left: 40px;
+  flex: 1 1 20%; /* for IE11 */
+}
+
+.header__logo a {
+  transition: filter .2s, -webkit-filter .2s;
+}
+
+.header__logo a:hover,
+.header__logo a:focus {
+  filter: drop-shadow(1px 1px 5px #005dd9);
+  -webkit-filter: drop-shadow(1px 1px 5px #005dd9);
+  transition: filter .2s, -webkit-filter .2s;
+}
+
+.header__logo img {
+  height: 100%;
+}
+
+.header__nav-wrapper {
+  margin-left: auto;
+  flex: 1 1 80%; /* for IE11 */
+}
+
+.header__nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.header__nav li a {
+  color: #009be0;
+  font-family: edo_sz, cursive;
+  font-size: 30px;
+  margin-right: 40px;
+  padding: 10px;
+  position: relative;
+  text-transform: uppercase;
+  transition: color .2s, text-shadow .2s;
+}
+
+.header__nav li a:hover,
+.header__nav li a:focus {
+  color: #005dd9;
+  text-shadow: 2px 2px 15px #005dd9;
+  transition: color .2s, text-shadow .2s;
+}
+
+.nav__current-page:before {
+  background-color: #009be0;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px; /* .header__nav li a.padding */
+  right: 10px; /* .header__nav li a.padding */
+  height: 3px;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.nav__current-page:hover:before {
+  background-color: #005dd9;
+  box-shadow: 0 0px 15px 0 #005dd9;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.header__nav-wrapper input,
+.header__nav-burger {
+  display: none;
+}
+
+/*---------------------------------
+  main
+----------------------------------- */
+.main-and-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.main {
+  display: block; /* IE11 support for main tag */
+  flex: 1 0 auto;
+}
+
+.main__row {
+  display: flex;
+  height: 100%;
+}
+
+/*---------------------------------
+  main > home page
+----------------------------------- */
+.main__search-form {
+  border-right: 4px solid rgba(0, 155, 224, .4); /* rgb(0,155,224) = #009be0*/
+  width: 25%;
+  min-width: 300px;
+  padding: 15px;
+  transition: border .2s, box-shadow .2s;
+}
+
+.main__search-form:hover {
+  border-right: 4px solid rgba(0, 93, 217, .5); /* rgb(0,93,217) = #005dd9*/
+  box-shadow: inset 2px 0 10px 0 #005dd9;
+  transition: border .2s, box-shadow .2s;
+}
+
+.main__search-form > * {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.main__content {
+  background-color: #fffffe;
+  width: 75%;
+  padding: 15px;
+}
+
+.main__cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.cards__card {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 0 20px 20px;
+  padding: 10px;
+  /* ((100% - this.margin-left * 2 {2 is number of cards in the row - 1} - few px for IE11 glitches / 3 {3 is number of cards in the row} */
+  width: calc((100% - 45px) / 3);
+  transition: box-shadow .2s;
+}
+
+.cards__card:nth-child(3n + 1) {
+  margin-left: 0;
+}
+
+.cards__card:hover {
+  box-shadow: 2px 2px 10px 0 #009be0;
+  transition: box-shadow .2s;
+}
+
+.cards__img-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card__img,
+.card__img-list {
+  min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.card__img-list li {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.card__img img,
+.card__img-list img {
+  width: 100%;
+  height: auto;
+}
+
+.card__img-nav-arrows {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-nav-arrow {
+  fill: #009be0;
+  height: 30px;
+  width: 30px;
+  transition: all .2s;
+}
+
+.img-nav-arrow:focus,
+.img-nav-arrow:hover {
+  cursor: pointer;
+  fill: #005dd9;
+  filter: drop-shadow(0 0 5px #005dd9);
+  -webkit-filter: drop-shadow(0 0 5px #005dd9);
+  transition: all .2s;
+}
+
+.card__img-nav-buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+}
+
+.card__img-nav-buttons input + input {
+  margin-left: 5px;
+}
+
+.card__brand-and-model {
+  display: flex;
+  flex-flow: column;
+  margin: auto auto 30px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.card__item-brand,
+.card__item-model {
+  display: flex;
+}
+
+.card-item__prop-name {
+  color: #808080;
+  font-size: 16px;
+}
+
+.card-item__prop-value {
+  margin-left: 10px;
+}
+
+.card__pricing {
+  margin: auto auto 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card__price {
+  color: #009be0;
+  font-size: 30px;
+}
+
+.card__old-price {
+  background: linear-gradient(to top right,#ffffff 48%,#878787 50%,#ffffff 52%);
+  color: #878787;
+  margin-left: 30px;
+  padding: 0;
+}
+
+.card__add-to-cart {
+  background-color: transparent;
+  border: 2px solid #009be0;
+  border-radius: 10px;
+  color: #000;
+  margin: auto auto 20px;
+  padding: 5px;
+  min-width: 150px;
+  width: 50%;
+  text-align: center;
+  transition: box-shadow .2s;
+}
+
+.card__add-to-cart:focus,
+.card__add-to-cart:hover {
+  box-shadow: 0 0 10px 2px #005dd9, inset 0 0 10px 2px #005dd9;
+  transition: box-shadow .2s;
+}
+
+/*---------------------------------
+  main > contact-us page
+----------------------------------- */
+.main__contact-us {
+  font-size: 20px;
+  margin: 15px auto 30px auto;
+  max-width: 767px;
+  padding: 10px;
+}
+
+.main__contact-us-form {
+  display: flex;
+  flex-flow: column;
+}
+
+.main__contact-us-form p {
+  margin: 40px 0 40px 0;
+}
+
+.main__contact-us-form label {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.main__contact-us-form input,
+.main__contact-us-form textarea {
+  font-size: 18px;
+  margin-bottom: 25px;
+  padding: 5px;
+}
+
+.main__contact-us-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-us__submit-btn {
+  display: flex;
+}
+
+.main__contact-us-form button {
+  background-color: #009be0;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 10px 50px;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.main__contact-us-form button:focus,
+.main__contact-us-form button:hover {
+  background-color: #005dd9;
+  box-shadow: 0 0 20px 0 #005dd9;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.main__contact-us-form button:active {
+  transform: translate(1px, 1px);
+  box-shadow: -1px -1px 20px 0 #005dd9;
+}
+
+/*---------------------------------
+  main > about-us page
+----------------------------------- */
+.main__about-us {
+  font-size: 20px;
+  margin: 15px auto 30px auto;
+  max-width: 1024px;
+  padding: 10px;
+}
+
+.main__about-us p,
+.about-us__contact-info h2 {
+  margin-top: 40px;
+}
+
+.about-us__contact-info a {
+  display: block;
+  margin-top: 10px;
+  color: #009be0;
+}
+
+.about-us__contact-info a address,
+.about-us__contact-info a span {
+  display: inline;
+  padding: 0 5px;
+}
+
+.about-us__contact-info a:focus address,
+.about-us__contact-info a:focus span {
+  outline: 1px solid #009be0;
+}
+
+#google-map {
+  margin-top: 10px;
+  width: 100%; 
+  height: 500px;
+}
+
+/*---------------------------------
+  footer
+----------------------------------- */
+.footer {
+  background-color: #cdccce;
+  box-shadow: 0 -5px 10px 0 #009be0;
+  flex: 0 1 auto;
+  margin-top: auto; /* pushing footer to the bottom if .main does not have enough content */
+  padding: 25px;
+  text-align: center;
+  transition: box-shadow .2s;
+}
+
+.footer:hover {
+  box-shadow: 0 -5px 10px 0 #005dd9;
+  transition: box-shadow .2s;
+}
+
+.footer__icons ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer__icons li {
+  margin: 0 0 10px 10px;
+}
+
+.footer__icons li:first-child {
+  margin-left: 0;
+}
+
+.footer__icons i,
+.footer__icons a {
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 100%;
+  transition: color .2s, text-shadow .2s;
+}
+
+.footer__icons i:hover,
+.footer__icons a:hover,
+.footer__icons i:focus,
+.footer__icons a:focus {
+  color: #005dd9;
+  text-shadow: 0 0 40px #005dd9;
+  transition: color .2s, text-shadow .2s;
+}
+
+.footer__icons li address,
+.footer__icons li span {
+  font-size: 15px;
+}
+
+.footer__copyright {
+  font-size: 15px;
+}
+
+/*---------------------------------
+  media
+----------------------------------- */
+@media screen and (max-width: 1024px) {
+  .header__nav li a {
+    margin-right: 30px;
+  }
+
+  /* only 2 cards in the row (2 cards__card) */
+  .cards__card {
+    width: calc((100% - 25px) / 2); /* ((100% - this.margin-left - few px for IE11 glitches / 2 {2 is number of cards in the row} */
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0;
+  }
+
+  .cards__card:nth-child(2n + 2) {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
+
+  .header__nav-burger {
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 0 40px 0 auto;
+  }
+
+  .header__nav-burger span {
+    position: relative;
+    background-color: #009be0;
+    display: block;
+    height: 5px;
+    width: 80%;
+  }
+
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
+    position: absolute;
+    top: -10px;
+    background-color: #009be0;
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+  }
+
+  .header__nav-burger span:after {
+    top: 10px;
+  }
+
+  .nav-burger__active span {
+    background-color: transparent;
+  }
+
+  .nav-burger__active span:before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .nav-burger__active span:after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .header__nav-burger span,
+  .header__nav-burger span:before,
+  .header__nav-burger span:after {
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .header__nav-burger:hover span,
+  .header__nav-burger:focus span,
+  .header__nav-burger:hover span:before,
+  .header__nav-burger:focus span:before,
+  .header__nav-burger:hover span:after,
+  .header__nav-burger:focus span:after {
+    background-color: #005dd9;
+    box-shadow: 0 0 10px 0 #005dd9;
+    transition-property: background-color, box-shadow, top, transform;
+    transition-duration: 0.2s;
+  }
+
+  .nav-burger__active:hover span {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .header__nav {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    height: 0;
+    max-height: 0; /* IE11 fix for transition */
+    width: 100%;
+    background-color: rgba(0, 0, 0, .98);
+    overflow: hidden;
+    transition: all .5s;
+    visibility: hidden;
+  }
+
+  .nav-burger__active ~ .header__nav {
+    height: 100vh; /* IE11 fix for transition, because "height: calc(100vh - 100%);" does not work */
+    max-height: calc(100vh - 100%); /* IE11 fix for transition */
+    padding-top: 20px;
+    transition: all .5s;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .header__nav ul {
+    flex-flow: column;
+    float: right;
+    max-width: 100%; /* to make sure long text will not overflow width in IE11 */
+  }
+
+  .header__nav li {
+    display: flex; /* to correctly present long text in multi-line format */
+  }
+
+  .header__nav li a {
+    padding-left: 20px;
+  }
+
+  .nav__current-page:before {
+    left: 5px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+  }
+
+  .main__row {
+    flex-direction: column;
+  }
+
+  .main__search-form {
+    border-bottom: 4px solid rgba(0, 155, 224, .4); /* rgb(0,155,224) = #009be0*/
+    border-right: none;
+    width: 100%;
+    max-width: none;
+    transition: border .2s, box-shadow .2s;
+  }
+
+  .main__search-form:hover {
+    border-bottom: 4px solid rgba(0, 93, 217, .5); /* rgb(0,93,217) = #005dd9*/
+    border-right: none;
+    box-shadow: inset 0 2px 10px 0 #005dd9;
+    transition: border .2s, box-shadow .2s;
+  }
+
+  .main__content {
+    width: 100%;
+  }
+
+  /* only 1 card in the row (1 cards__card) */
+  .cards__card {
+    width: 100%;
+  }
+
+  /* ".cards__card" can`t be used here because we need to override "cards__card:nth-child()" from the other @media rules */
+  .cards__card:nth-child(1n) {
+    margin-left: 0;
+  }
+
+  .footer__contacts ul {
+    flex-flow: column;
+    margin-top: 20px;
+  }
+}

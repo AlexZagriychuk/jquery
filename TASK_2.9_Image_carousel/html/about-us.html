@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bike Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../fonts/font_awesome_selection/css/font_awesome_selection.css">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <strong class="header__logo">
+      <a href="../index.html">
+        <img src="../images/logo.png" alt="The Bike Shop">
+      </a>
+    </strong>
+    <div class="header__nav-wrapper">
+      <a class="header__nav-burger" id="nav-burger-btn">
+        <span></span>
+      </a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a class="nav__current-page" href="#">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-and-footer-wrapper">
+    <main class="main">
+      <div class="main__about-us">
+        <h1 class="about-us__title">About us</h1>
+        <p class="about-us__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus placeat asperiores, ex esse ipsam explicabo eligendi officia id itaque corporis eum, illum omnis iure! Architecto id sapiente vel odio maxime.</p>
+
+        <div class="about-us__contact-info">
+          <h2>Our contacts:</h2>
+          <a class="icon-phone" href="tel:11234567890"><span>+1 123-456-7890</span></a>
+          <a class="icon-mail-alt" href="mailto:abc@example.com"><span>abc@example.com</span></a>
+          <h2 id="our-address">Our address:</h2>
+          <a class="icon-location" href="#google-map"><address>701 W Georgia St, Vancouver, BC V7Y 1G5</address></a>
+          <iframe id="google-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22057.857536137104!2d-123.14425806365136!3d49.2862379768151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f45186a3f%3A0x26cdaebfb6f46250!2sCF%20Pacific%20Centre!5e0!3m2!1sru!2sca!4v1599354854861!5m2!1sru!2sca">
+          </iframe>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__icons footer__social">
+        <ul>
+          <li><a class="icon-facebook-official" href="https://www.facebook.com/" target="_blank"></a></li>
+          <li><a class="icon-instagram" href="https://www.instagram.com/?hl=en" target="_blank"></a></li>
+          <li><a class="icon-twitter" href="https://twitter.com/tweeter?lang=en" target="_blank"></a></li>
+          <li><a class="icon-youtube-play" href="https://www.youtube.com/" target="_blank"></a></li>
+          <li><a class="icon-pinterest-circled" href="https://www.pinterest.com/" target="_blank"></a></li>
+          <li><a class="icon-reddit" href="https://www.reddit.com/" target="_blank"></a></li>
+          <li><a class="icon-linkedin-squared" href="https://www.linkedin.com/" target="_blank"></a></li>
+          <li><a class="icon-github-circled" href="https://github.com/" target="_blank"></a></li>
+        </ul>
+      </div>
+      <div class="footer__icons footer__contacts">
+        <ul>
+          <li><a class="icon-phone" href="tel:11234567890"><span>+1 123-456-7890</span></a></li>
+          <li><a class="icon-mail-alt" href="mailto:abc@example.com"><span>abc@example.com</span></a></li>
+          <li><a class="icon-location" href="#our-address"><address>701 W Georgia St, Vancouver, BC V7Y 1G5</address></a></li>
+        </ul>
+      </div>
+      <span class="footer__copyright">&copy; The Bike Shop 2020</span>
+    </footer>
+  </div>
+
+  <script src="../scripts/main.js"></script>
+</body>
+
+</html>
