@@ -258,8 +258,29 @@ body {
   z-index: 1;
 }
 
-.card__img-nav-buttons input + input {
+.card__img-nav-buttons li {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  transition: background-color .2s, box-shadow .2s;
+}
+
+.card__img-nav-buttons li:focus,
+.card__img-nav-buttons li:hover {
+  box-shadow: 0 0 5px 1px #000;
+  transition: box-shadow .2s;
+}
+
+.card__img-nav-buttons li + li {
   margin-left: 5px;
+}
+
+.card__img-nav-buttons li.checked-img-nav-button {
+  background-color: #009be0;
+  transition: background-color .2s;
 }
 
 .card__brand-and-model {

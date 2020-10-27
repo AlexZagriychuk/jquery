@@ -19,14 +19,15 @@ function initJQueryImageCarousel() {
     var imgCarousel = this;
     imgCarousel.carouselImageIndex = 0;
     imgCarousel.images = $(imgCarousel).find(".card__img-list li");
-    imgCarousel.radioButtons = $(imgCarousel).find(".card__img-nav-buttons input[type='radio']");
+    imgCarousel.navButtons = $(imgCarousel).find(".card__img-nav-buttons li");
+    imgCarousel.navButtons.selectedIndex = 0;
 
     // init left arrow listeners
     var leftArrow = $(imgCarousel).find(".left-arrow")[0];
     $(leftArrow).click(function () {
       imgCarousel.updateCarouselImageIndex(-1);
       imgCarousel.animateCarouselImage();
-      imgCarousel.updateCheckedRadioButton();
+      imgCarousel.updateCheckedNavButton();
     });
 
     // init right arrow listeners
@@ -34,22 +35,23 @@ function initJQueryImageCarousel() {
     $(rightArrow).click(function () {
       imgCarousel.updateCarouselImageIndex(+1);
       imgCarousel.animateCarouselImage();
-      imgCarousel.updateCheckedRadioButton();
+      imgCarousel.updateCheckedNavButton();
     });
 
-    // init radio buttons listeners
-    $(imgCarousel.radioButtons).each(function () {
+    // init nav buttons listeners
+    $(imgCarousel.navButtons).each(function () {
       $(this).click(function () {
-        imgCarousel.carouselImageIndex = this.getClickedRadioButtonIndex();
+        imgCarousel.carouselImageIndex = this.getClickedNavButtonIndex();
         imgCarousel.animateCarouselImage();
+        imgCarousel.updateCheckedNavButton();
       });
 
-      this.getClickedRadioButtonIndex = getClickedRadioButtonIndex;
+      this.getClickedNavButtonIndex = getClickedNavButtonIndex;
     });
 
     imgCarousel.updateCarouselImageIndex = updateCarouselImageIndex;
     imgCarousel.animateCarouselImage = animateCarouselImage;
-    imgCarousel.updateCheckedRadioButton = updateCheckedRadioButton;
+    imgCarousel.updateCheckedNavButton = updateCheckedNavButton;
   });
 
   function updateCarouselImageIndex(diff) {
@@ -69,11 +71,25 @@ function initJQueryImageCarousel() {
     $(this.images[0]).animate({ marginLeft: newMarginLeft });
   }
 
-  function updateCheckedRadioButton() {
-    $(this.radioButtons[this.carouselImageIndex]).prop("checked", true);
+  function updateCheckedNavButton() {
+    var imgCarousel = this;
+    if(imgCarousel.navButtons.selectedIndex === imgCarousel.carouselImageIndex)
+      return;
+
+    var checkedNavButtonClassName = "checked-img-nav-button";
+    $(imgCarousel.navButtons).each(function(index) {
+      var navButton = imgCarousel.navButtons[index];
+      if(index === imgCarousel.carouselImageIndex) {
+        $(navButton).addClass(checkedNavButtonClassName);
+      } else {
+        $(navButton).removeClass(checkedNavButtonClassName);
+      }
+    })
+
+    imgCarousel.navButtons.selectedIndex = imgCarousel.carouselImageIndex;
   }
 
-  function getClickedRadioButtonIndex() {
+  function getClickedNavButtonIndex() {
     var childrenOfParent = $(this).parent().children();
 
     for (var i = 0; i < childrenOfParent.length; i++) {
