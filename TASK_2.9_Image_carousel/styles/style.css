@@ -194,28 +194,32 @@ body {
   transition: box-shadow .2s;
 }
 
-.cards__img-wrapper {
+.card__img {
+  min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
+  width: 100%;
+}
+
+.card__img img {
+  width: 100%;
+}
+
+.cards__img-carousel {
   margin-bottom: 20px;
+  width: 100%;
   position: relative;
 }
 
-.card__img,
 .card__img-list {
-  min-height: 1px; /* IE11 workaround to avoid big height of this block with lots of white space */
-  width: 100%;
   display: flex;
   overflow: hidden;
 }
 
 .card__img-list li {
-  flex-shrink: 0;
-  width: 100%;
+  min-width: 100%;
 }
 
-.card__img img,
-.card__img-list img {
-  width: 100%;
-  height: auto;
+.card__img-list li img {
+  width: 100%; 
 }
 
 .card__img-nav-arrows {
