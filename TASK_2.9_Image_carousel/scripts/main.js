@@ -15,25 +15,22 @@ function initToggleBurgerMenuBtn() {
 
 function initJQueryImageCarousel() {
   var imgCarousels = $(".cards__img-carousel");
+  
   $(imgCarousels).each(function () {
     var imgCarousel = this;
+
     imgCarousel.carouselImageIndex = 0;
     imgCarousel.images = $(imgCarousel).find(".card__img-list li");
     imgCarousel.navButtons = $(imgCarousel).find(".card__img-nav-buttons li");
-    imgCarousel.navButtons.selectedIndex = 0;
 
-    // init left arrow listeners
-    var leftArrow = $(imgCarousel).find(".left-arrow")[0];
-    $(leftArrow).click(function () {
-      imgCarousel.updateCarouselImageIndex(-1);
-      imgCarousel.animateCarouselImage();
-      imgCarousel.updateCheckedNavButton();
-    });
+    // init left and right arrow listeners
+    $('.img-nav-arrow', imgCarousel).on('click', function (e) {
+      e.preventDefault();
 
-    // init right arrow listeners
-    var rightArrow = $(imgCarousel).find(".right-arrow")[0];
-    $(rightArrow).click(function () {
-      imgCarousel.updateCarouselImageIndex(+1);
+      $(this).hasClass('left-arrow')
+        ? imgCarousel.updateCarouselImageIndex(-1)
+        : imgCarousel.updateCarouselImageIndex(+1);
+
       imgCarousel.animateCarouselImage();
       imgCarousel.updateCheckedNavButton();
     });
@@ -41,9 +38,13 @@ function initJQueryImageCarousel() {
     // init nav buttons listeners
     $(imgCarousel.navButtons).each(function () {
       $(this).click(function () {
-        imgCarousel.carouselImageIndex = this.getClickedNavButtonIndex();
-        imgCarousel.animateCarouselImage();
-        imgCarousel.updateCheckedNavButton();
+        var clickedNavButtonIndex = this.getClickedNavButtonIndex();
+
+        if (imgCarousel.carouselImageIndex !== clickedNavButtonIndex) {
+          imgCarousel.carouselImageIndex = clickedNavButtonIndex;
+          imgCarousel.animateCarouselImage();
+          imgCarousel.updateCheckedNavButton();
+        }
       });
 
       this.getClickedNavButtonIndex = getClickedNavButtonIndex;
@@ -72,21 +73,18 @@ function initJQueryImageCarousel() {
   }
 
   function updateCheckedNavButton() {
-    var imgCarousel = this;
-    if(imgCarousel.navButtons.selectedIndex === imgCarousel.carouselImageIndex)
-      return;
+    var imgCarousel = this,
+      checkedNavButtonClassName = "checked-img-nav-button";
 
-    var checkedNavButtonClassName = "checked-img-nav-button";
-    $(imgCarousel.navButtons).each(function(index) {
+    $(imgCarousel.navButtons).each(function (index) {
       var navButton = imgCarousel.navButtons[index];
-      if(index === imgCarousel.carouselImageIndex) {
+
+      if (index === imgCarousel.carouselImageIndex) {
         $(navButton).addClass(checkedNavButtonClassName);
       } else {
         $(navButton).removeClass(checkedNavButtonClassName);
       }
     })
-
-    imgCarousel.navButtons.selectedIndex = imgCarousel.carouselImageIndex;
   }
 
   function getClickedNavButtonIndex() {
