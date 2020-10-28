@@ -233,6 +233,7 @@ body {
 }
 
 .img-nav-arrow span {
+  cursor: pointer;
   display: block;
   height: 30px;
   width: 30px;

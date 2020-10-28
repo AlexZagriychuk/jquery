@@ -59,17 +59,20 @@ function initJQueryImageCarousel() {
   });
 
   function generateNavButtonsListHTML(listCssClass, listItemsCount) {
-    var html = '<ul class="' + listCssClass + '">';
+    var i = 0,
+      ul = $('<ul class="' + listCssClass + '">');
 
-    for (var i = 0; i < listItemsCount; i++) {
-      if (i === 0) {
-        html += '<li class="' + checkedNavButtonClassName + '"></li>';
-      } else {
-        html += '<li></li>';
-      }
+    for (; i < listItemsCount; i++) {
+      var li = $('<li>');
+
+      i === 0
+        ? li.addClass(checkedNavButtonClassName)
+        : li;
+
+      ul.append(li);
     }
 
-    return html + "</ul>"
+    return ul;
   }
 
   function updateCarouselImageIndex(diff) {
