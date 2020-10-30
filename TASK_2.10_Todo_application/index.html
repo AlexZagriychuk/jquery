@@ -14,7 +14,48 @@
 
 <body>
   <div class="wrapper">
-
+    <h1 class="title">To do list.</h1>
+    <section class="new-task">
+      <h2 class="new-task__title title">Create new task:</h2>
+      <div class="new-task__add-row">
+        <label for="newTaskDescription">New task text: </label>
+        <input type="text" class="new-task__description" id="newTaskDescription">
+        <button class="new-task__create-btn" id="createNewTask">Create</button>
+      </div>
+    </section>
+    <section class="to-be-done">
+      <h2 class="to-be-done__title title">Tasks to be done:</h2>
+      <ul class="to-be-done__tasks tasks" id="tasksToBeDoneList">
+        <li class="task">
+          <span class="task__description">Task 1 text</span>
+          <button class="task__btn completed-btn">Completed</button>
+          <button class="task__btn delete-btn">Delete</button>
+        </li>
+        <li class="task">
+          <span class="task__description">Task 2 text</span>
+          <button class="task__btn completed-btn">Completed</button>
+          <button class="task__btn delete-btn">Delete</button>
+        </li>
+        <li class="task">
+          <span class="task__description">Task 3 text</span>
+          <button class="task__btn completed-btn">Completed</button>
+          <button class="task__btn delete-btn">Delete</button>
+        </li>
+      </ul>
+    </section>
+    <section class="completed">
+      <h2 class="completed__title title">Completed tasks:</h2>
+      <ul class="completed__tasks tasks" id="completedTasksList">
+        <li class="task">
+          <span class="task__description">Task 11 text</span>
+          <button class="task__btn delete-btn">Delete</button>
+        </li>
+        <li class="task">
+          <span class="task__description">Task 12 text</span>
+          <button class="task__btn delete-btn">Delete</button>
+        </li>
+      </ul>
+    </section>
   </div>
 
   <script src="scripts/main.js"></script>

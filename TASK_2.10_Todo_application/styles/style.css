@@ -1,7 +1,7 @@
 body {
   background-color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   overflow-y: auto;
   padding: 20px 20px 0;
 }
@@ -16,9 +16,116 @@ body {
   min-height: 100%;
   margin: 0 auto;
   max-width: 1000px;
+  padding: 20px;
 }
 
 .wrapper > * {
   color: #333;
   width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+section {
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px;
+}
+
+.new-task__add-row {
+  display: flex;
+  align-items: center;
+}
+
+.new-task__description {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  flex-grow: 1;
+  font-size: 22px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  transition: all .2s;
+}
+
+.new-task__description:focus {
+  border: 1px solid rgba(0, 0, 255, 15);
+  box-shadow: 0 0 10px 0 rgb(0, 0, 255);
+  transition: all .2s;
+}
+
+.new-task__create-btn {
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 22px;
+  margin-left: 20px;
+  padding: 5px;
+  transition: all .2s;
+}
+
+.new-task__create-btn:hover,
+.new-task__create-btn:focus {
+  box-shadow: 0 0 10px 0 blue;
+  background-color: blue;
+  color: #fff;
+  transition: all .2s;
+}
+
+.tasks {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+.task {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.task + .task {
+  border-top: 1px solid #aaa;
+}
+
+.task__description {
+  flex-grow: 1;
+}
+
+.task__btn {
+  border-radius: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px;
+  transition: all .2s;
+}
+
+.completed-btn {
+  border: 1px solid rgb(85, 204, 74);
+}
+
+.completed-btn:focus,
+.completed-btn:hover {
+  box-shadow: 0 0 10px 0 rgb(85, 204, 74);
+  background-color: rgba(85, 204, 74, 0.5);
+  transition: all .2s;
+}
+
+.delete-btn {
+  border: 1px solid rgb(197, 40, 40);
+}
+
+.delete-btn:focus,
+.delete-btn:hover {
+  box-shadow: 0 0 10px 0 rgb(197, 40, 40);
+  background-color: rgba(197, 40, 40, 0.5);
+  transition: all .2s;
+}
+
+.completed__tasks {
+  background-color: rgba(205, 250, 238, 0.5);
 }
