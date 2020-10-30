@@ -71,10 +71,19 @@ section {
 
 .new-task__create-btn:hover,
 .new-task__create-btn:focus {
-  box-shadow: 0 0 10px 0 blue;
-  background-color: blue;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 255);
+  background-color: rgb(0, 0, 255);
   color: #fff;
   transition: all .2s;
+}
+
+.new-task__error-text {
+  color: rgba(255, 0, 0, 0.7);
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+  width: 100%
 }
 
 .tasks {
