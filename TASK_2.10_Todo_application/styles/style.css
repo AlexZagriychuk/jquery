@@ -89,6 +89,12 @@ section {
 .tasks {
   border: 1px solid #aaa;
   border-radius: 10px;
+  min-height: 45px;
+}
+
+.tasks__no-tasks-msg {
+  display: block;
+  padding: 10px;
 }
 
 .task {
@@ -101,6 +107,11 @@ section {
   border-top: 1px solid #aaa;
 }
 
+.to-be-done__tasks .completed-task {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
 .task__description {
   flex-grow: 1;
 }
@@ -110,17 +121,6 @@ section {
   font-size: 16px;
   margin-left: 10px;
   padding: 5px;
-  transition: all .2s;
-}
-
-.completed-btn {
-  border: 1px solid rgb(85, 204, 74);
-}
-
-.completed-btn:focus,
-.completed-btn:hover {
-  box-shadow: 0 0 10px 0 rgb(85, 204, 74);
-  background-color: rgba(85, 204, 74, 0.5);
   transition: all .2s;
 }
 
