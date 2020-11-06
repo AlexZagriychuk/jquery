@@ -36,7 +36,10 @@ function initJQueryCreateNewTask() {
   function addTaskIntoToTheBeDoneList(taskText) {
     var $task = $(generateNewTaskHTML(taskText));
 
-    $task.hide().appendTo("#tasksToBeDoneList").fadeIn(300);
+    $task
+      .hide()
+      .appendTo("#tasksToBeDoneList")
+      .fadeIn(300);
 
     //click task (listener)
     $task.click(function () {
@@ -84,11 +87,14 @@ function initJQueryCompletedTasksListDroppable() {
     accept: "#tasksToBeDoneList > li",
     drop: function (event, ui) {
       var $completedTasksList = $(this),
-        $uiDraggable = $(ui.draggable);
+        $uiDraggable = $(ui.draggable),
+        duration = 300;
 
-      $uiDraggable.fadeOut(300, function () {
-        $uiDraggable.appendTo($completedTasksList).fadeIn(300);
-        $uiDraggable.draggable({ disabled: true });
+      $uiDraggable.fadeOut(duration, function () {
+        $uiDraggable
+          .appendTo($completedTasksList)
+          .fadeIn(duration)
+          .draggable({ disabled: true });
       });
     },
   });
