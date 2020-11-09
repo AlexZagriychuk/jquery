@@ -107,6 +107,10 @@ section {
   border-top: 1px solid #aaa;
 }
 
+.to-be-done__tasks .task {
+  cursor: pointer;
+}
+
 .to-be-done__tasks .completed-task {
   text-decoration: line-through;
   opacity: 0.8;
